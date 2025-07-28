@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>Gestion des Medecins</h2>
+
+    <form (ngSubmit)="enregistrer()" class="formulaire">
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" [(ngModel)]="nouveauMedecin.nom" name="nom" required>
+        </div>
+
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" [(ngModel)]="nouveauMedecin.email" name="email" required>
+        </div>
+
+        <div>
+            <label for="telephone">Téléphone :</label>
+            <input type="text" [(ngModel)]="nouveauMedecin.telephone" name="telephone" required>
+        </div>
+
+        <div>
+            <label for="specialite">Spécialité :</label>
+            <input type="text" [(ngModel)]="nouveauMedecin.specialite" name="specialite" required>
+        </div>
+
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" [(ngModel)]="nouveauMedecin.password" name="password" required>
+        </div>
+
+        <div class="boutons">
+            <button type="submit">
+                {{modifierEncours ? 'Modifier' : 'Ajouter'}}
+            </button>
+            <button type="button" (click)="annuler()">Annuler</button>
+        </div>
+    </form>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Specialité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let medecin of medecins">
+                <td>{{ medecin.nom }}</td>
+                <td>{{ medecin.email }}</td>
+                <td>{{ medecin.telephone }}</td>
+                <td>{{ medecin.specialite }}</td>
+                <td>
+                    <button (click)="modifier(medecin)">Modifier</button>
+                    <button (click)="supprimer(medecin)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <button id="dashboard" (click)="retourDashboard()">Retour Dashboard</button>
+</div>

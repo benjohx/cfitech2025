@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Miam Restaurant - Enjoy healthy and delicious cuisine">
+  <script src="https://kit.fontawesome.com/dc1cd6cd74.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Miam - Healthy & Delicious Food</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+ <div id="contenitoreForm"></div>
+    <nav class="navbar" aria-label="Main navigation">
+      <img src="img/logo.png" alt="Miam logo" style="height: 100px;" />
+      <ul class="nav-links" role="list">
+        <li ><a href="#home" class="nav-link">Home</a></li>
+        <li ><a href="#about" class="nav-link">About</a></li>
+        <li ><a href="#menu" class="nav-link">Menu</a></li>
+        <li ><a href="#events" class="nav-link">Events</a></li>
+        <li ><a href="#chefs" class="nav-link">Chefs</a></li>
+        <li ><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li ><a href="#reservation" class="nav-link">Reservation</a></li>
+      </ul>
+      <div class="actions">
+        <button class="btn" id="mostraForm">REGISTRATION</button>
+        <button class="btn" onclick="toggleTheme()">Change theme</button>
+      </div>
+    </nav>
+
+  </body>
+ <!-- Add after header --> 
+  <main class="hero">
+    <div class="hero-text">
+      <h1><span>ENJOY YOUR HEALTHY</span><br />DELICIOUS FOOD</h1>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+      <div class="actions">
+        <button class="btn primary">Book a table</button>
+        <button class="btn secondary" aria-label="Watch introduction video">▶ Watch Video</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="./img/hero-img.png" alt="Colorful salad bowl with fresh ingredients" loading="lazy" />
+    </div>
+  </main>
+
+  <section class="about-section" aria-labelledby="about-heading">
+    <div class="about-left">
+      <figure>
+        <img src="./img/about.jpg" alt="Modern restaurant interior with wooden tables" loading="lazy" />
+      </figure>
+      <div class="book-box">
+        <h3>Book a table</h3>
+        <p><a href="tel:+32465605002">+32-465-605-002</a></p>
+      </div>
+    </div>
+    
+     <!-- Add after main --> 
+      
+    <div class="about-right">
+
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+      <ul class="about-list" role="list">
+        <li role="listitem">✔ Fresh, locally-sourced ingredients</li>
+        <li role="listitem">✔ Experienced culinary team</li>
+        <li role="listitem">✔ Sustainable cooking practices</li>
+      </ul>
+      <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+      <div class="video-preview">
+        <img src="./img/about-2.jpg" alt="Artistically plated breakfast dish" loading="lazy" />
+        <button class="play-button" aria-label="Play our story video">▶</button>
+      </div>
+    </div>
+  </section>
+
+ <div class="section-title" id="about">
+    <h2>ABOUT <span>US</span></h2>
+  </div>
+
+<section class="why-choose">
+  <div class="why-left">
+    <h2>Why choose Miam ?</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit animi, repellendus a ipsum ut, dolorum aliquid nisi quibusdam fugiat est dicta? Inventore doloribus, debitis quos assumenda suscipit expedita animi minima, unde porro adipisci tenetur! Hic ipsam tenetur ipsa voluptatum. Odio, eius. Tempora itaque quaerat natus inventore placeat, harum quas consectetur?
+    </p>
+    <a href="#" class="learn-btn">Learn More</a>
+  </div>
+
+  <div class="features-grid">
+    <article class="feature-card">
+      <div class="icon-circle">
+        <img src="https://img.icons8.com/ios-filled/50/000000/combo-chart--v1.png" alt="Icon 1">
+      </div>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus corporis architecto totam vitae, aspernatur itaque magni dolorum minima exercitationem hic.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="icon-circle">
+        <img src="https://img.icons8.com/ios-filled/50/000000/diamond--v1.png" alt="Icon 2">
+      </div>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus corporis architecto totam vitae, aspernatur itaque magni dolorum minima exercitationem hic.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="icon-circle">
+        <img src="https://img.icons8.com/ios-filled/50/000000/home-page.png" alt="Icon 3">
+      </div>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus corporis architecto totam vitae, aspernatur itaque magni dolorum minima exercitationem hic.</p>
+    </article>
+  </div>
+</section>
+
+
+   <!-- Add after section about --> 
+<section class="stats-section">
+  <div class="stats-overlay">
+    <div class="stat-item">
+      <h3 class="count" data-target="232">0</h3>
+      <p>Clients</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="count" data-target="531">0</h3>
+      <p>Projects</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="count" data-target="1432">0</h3>
+      <p>Hours Of Support</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="count" data-target="32">0</h3>
+      <p>Workers</p>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Add after section stats --> 
+    <section class="menu-section" id="menu">
+  <div class="section-title">
+    <h2>WEEKLY SPECIAL <span>MENU</span></h2>
+  </div>
+
+  <ul class="menu-filter">
+    <li class="active" data-category="all">Starter</li>
+    <li data-category="breakfast">Breakfast</li>
+    <li data-category="lunch">Lunch</li>
+    <li data-category="dinner">Dinner</li>
+  </ul>
+
+  <div class="menu-items">
+    <div class="menu-card" data-category="breakfast">
+      <img src="img/menu/menu-item-1.png" alt="Breakfast">
+      <h3>FAZFAEZ</h3>
+      <p>salade, tomate, oignon</p>
+      <span>$14.95</span>
+    </div>
+    <div class="menu-card" data-category="breakfast">
+      <img src="img/menu/menu-item-5.png" alt="Breakfast">
+      <h3>FAZFAEZ</h3>
+      <p>salade, tomate, oignon</p>
+      <span>$14.95</span>
+    </div>
+
+    <div class="menu-card" data-category="lunch">
+      <img src="img/menu/menu-item-2.png" alt="Lunch">
+      <h3>FAZFAEZ</h3>
+      <p>salade, tomate, oignon</p>
+      <span>$8.99</span>
+    </div>
+    <div class="menu-card" data-category="lunch">
+      <img src="img/menu/menu-item-6.png" alt="Lunch">
+      <h3>FAZFAEZ</h3>
+      <p>salade, tomate, oignon</p>
+      <span>$8.99</span>
+    </div>
+
+    <div class="menu-card" data-category="dinner">
+      <img src="img/menu/menu-item-4.png" alt="Dinner">
+      <h3>FAZFAEZ</h3>
+      <p>salade, tomate, oignon</p>
+      <span>$8.99</span>
+    </div>
+
+    <div class="menu-card" data-category="dinner">
+      <img src="img/menu/menu-item-3.png" alt="Dinner">
+      <h3>FAZFAEZ</h3>
+      <p>salade, tomate, oignon</p>
+      <span>$8.99</span>
+    </div>
+  </div>
+</section>
+  <!-- Add after menu cards section -->
+
+      <section class="testimonial-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active">
+            <img src="img/testimonials/testimonials-1.jpg" alt="Profile Picture" class="profile-image" />
+                <p class="testimonial-text">
+                Was okay, not the best mussels or steak, and service was slow.
+                Waitress did, however, give us a complimentary drink for our wait..
+                </p>
+                <h3 class="author-name">Jonas Karlis</h3>
+                <p class="author-username">fazzaEce</p>
+        <div class="star-rating" aria-label="4 out of 5 stars"> ★★★★☆</div>
+            </div>
+
+            <!-- Slide 2 -->
+              <div class="testimonial-slide">
+          <img src="img/testimonials/testimonials-2.jpg" alt="Profile Picture" class="profile-image" />
+                <p class="testimonial-text">
+                   I often come here with my boyfriend and each time 
+                 the waiters are warm and ready to welcome us, music and beautiful atmosphere! 
+                </p>
+                <h3 class="author-name">Jane Smith</h3>
+                <p class="author-username">designExpert</p>
+           <div class="star-rating" aria-label="4 out of 5 stars"> ★★★★☆</div>     
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+          <img src="img/testimonials/testimonials-3.jpg" alt="Profile Picture" class="profile-image" />
+                <p class="testimonial-text">
+                    Quiet and very nice setting, very reasonable value for money.
+                    The service is impeccable. I invite you to discover...
+                </p>
+                <h3 class="author-name">Mike Johnson</h3>
+                <p class="author-username">techGuru</p>
+           <div class="star-rating" aria-label="4 out of 5 stars"> ★★★★☆</div>     
+            </div>
+            <!-- Slide 4 -->
+            <div class="testimonial-slide">
+          <img src="img/testimonials/testimonials-4.jpg" alt="Profile Picture" class="profile-image" />
+                <p class="testimonial-text">
+                    The food was delicious and the service was outstanding.
+                    I would highly recommend this restaurant to anyone who loves good food.
+                </p>
+                <h3 class="author-name">Emily Davis</h3>
+                <p class="author-username">foodLover</p>
+           <div class="star-rating" aria-label="4 out of 5 stars"> ★★★★☆</div>     
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="slider-nav prev">❮</div>
+            <div class="slider-nav next">❯</div>
+        </div>
+    </section>
+
+  <!-- Add after testimonial slider section -->
+    <section class="testimonial-slider" id="gallery">
+    <div class="gallery-section">
+    <h3 class="gallery-title">Gallery</h3>
+    <div class="gallery-grid">
+        <img src="img/gallery/gallery-1.jpg" alt="Gallery Image 1">
+        <img src="img/gallery/gallery-2.jpg" alt="Gallery Image 2">
+        <img src="img/gallery/gallery-3.jpg" alt="Gallery Image 3">
+        <img src="img/gallery/gallery-4.jpg" alt="Gallery Image 4">
+        <img src="img/gallery/gallery-5.jpg" alt="Gallery Image 5">
+                        </div>
+                </div>
+        </section>
+
+  <!-- Add after gallery section -->
+   <section class="team-section" id="chefs">
+  <h2 class="team-heading">Meet Our Team</h2>
+  <div class="team-cards">
+    <div class="team-card">
+      <img src="img/chefs/chefs-1.jpg" alt="Chef 1" />
+      <div class="wave"></div>
+      <div class="team-info">
+        <h3>Walter White</h3>
+        <p>Master Chef</p>
+              <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card">
+      <img src="img/chefs/chefs-2.jpg" alt="Chef 2" />
+      <div class="wave"></div>
+      <div class="team-info">
+        <h3>Walter White</h3>
+        <p>Master Chef</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card">
+      <img src="img/chefs/chefs-3.jpg" alt="Chef 3" />
+      <div class="wave"></div>
+      <div class="team-info">
+        <h3>Walter White</h3>
+        <p>Master Chef</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Add after team section -->
+  <section class="reservation-section" id="reservation">
+  <h2 class="reservation-heading">Reservation</h2>
+  <div class="reservation-container">
+    <div class="reservation-image">
+      <img src="img/reservation.jpg" alt="Table setup">
+    </div>
+    <div class="reservation-form">
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="tel" placeholder="Your Phone" required />
+        </div>
+        <div class="form-row">
+          <input type="date" required />
+          <input type="time" required />
+          <input type="number" placeholder="#of People" required />
+        </div>
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button type="submit">Book a table</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Add after reservation section -->
+
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

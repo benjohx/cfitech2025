@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>Gestion des Patients</h2>
+
+    <form (ngSubmit)="enregistrer()" class="formulaire">
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" [(ngModel)]="nouveauPatient.nom" name="nom" required>
+        </div>
+
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" [(ngModel)]="nouveauPatient.email" name="email" required>
+        </div>
+
+        <div>
+            <label for="telephone">Téléphone :</label>
+            <input type="text" [(ngModel)]="nouveauPatient.telephone" name="telephone" required>
+        </div>
+
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" [(ngModel)]="nouveauPatient.password" name="password" required>
+        </div>
+
+        <div class="boutons">
+            <button type="submit">
+                {{modifierEncours ? 'Modifier' : 'Ajouter'}}
+            </button>
+            <button type="button" (click)="annuler()">Annuler</button>
+        </div>
+    </form>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{ patient.nom }}</td>
+                <td>{{ patient.email }}</td>
+                <td>{{ patient.telephone }}</td>
+                <td>
+                    <button (click)="modifier(patient)">Modifier</button>
+                    <button (click)="supprimer(patient)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <button id="dashboard" (click)="retourDashboard()">Retour Dashboard</button>
+</div>

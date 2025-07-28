@@ -1,0 +1,94 @@
+<div class="container">
+    <h2>Gestion des Formations</h2>
+
+    <form (ngSubmit)="enregistrer()" class="formulaire">
+        <div>
+            <label for="date">Date :</label>
+            <input type="date" [(ngModel)]="nouveauRendezVous.date" name="date" required>
+        </div>
+
+        <div>
+            <label for="heure">Heure :</label>
+            <input type="number" [(ngModel)]="nouveauRendezVous.heure" name="heure" required>
+        </div>
+
+
+        <label for="patient">Patient :</label>
+        <select [(ngModel)]="nouveauRendezVous.patientId" name="patient">
+            <option *ngFor="let patient of patients" [value]="patient.id">
+                {{patient.nom}}
+            </option>
+        </select>
+
+
+
+        <label for="medecin">Médecin :</label>
+        <select [(ngModel)]="nouveauRendezVous.medecinId" name="medecin">
+            <option *ngFor="let medecin of medecins" [value]="medecin.id">
+                {{medecin.nom}}
+            </option>
+        </select>
+
+
+        <label for="etat">État :</label>
+        <select name="niveau" id="" [(ngModel)]="nouveauRendezVous.etat">
+            <option value="en attente">En attente</option>
+            <option value="confirmé">Confirmé</option>
+            <option value="annulé">Annulé</option>
+        </select>
+
+
+
+        <div class="boutons">
+            <button type="submit">
+                {{modifierEncours ? 'Modifier' : 'Ajouter'}}
+            </button>
+            <button type="button" (click)="annuler()">Annuler</button>
+        </div>
+    </form>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Médecin</th>
+                <th>Patient</th>
+                <th>État</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rdv of rendezVous">
+                <td>{{ rdv.date }}</td>
+
+                <td>{{ rdv.heure }}</td>
+
+                <td>
+                    <div *ngFor="let medecin of medecins">
+                        <p *ngIf="medecin.id == rdv.medecinId">{{medecin.nom}}</p>
+                    </div>
+                </td>
+
+                <td>
+                    <div *ngFor="let patient of patients">
+                        <p *ngIf="patient.id == rdv.patientId">{{patient.nom}}</p>
+                    </div>
+                </td>
+
+                <td>{{ rdv.etat }}</td>
+
+                <td>
+                    <button (click)="modifier(rdv)">Modifier</button>
+                    <button (click)="supprimer(rdv)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <br>
+    <button id="dashboard" (click)="retourDashboard()">Retour Dashboard</button>
+</div>

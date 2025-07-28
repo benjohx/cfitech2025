@@ -1,0 +1,57 @@
+/* Centrer le formulaire */
+form {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Champs */
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  /* Bouton */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(167, 201, 87);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgb(106, 153, 78);
+  }
+  
+  /* Message d’erreur (si besoin plus tard) */
+  .error-message {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }

@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Mes Rendez-vous</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Patient</th>
+                <th>État</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rdv of rendezVous">
+                <td>{{ rdv.date }}</td>
+                <td>{{ rdv.heure }}</td>
+                <td>
+                    <div *ngFor="let patient of patients">
+                        <p *ngIf="patient.id == rdv.patientId">{{patient.nom}}</p>
+                    </div>
+                </td>
+                <td>{{ rdv.etat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button (click)="retourDashboard()" class="btn-retour">
+        Retour
+    </button>
+</div>

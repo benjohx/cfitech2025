@@ -1,0 +1,53 @@
+.container {
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(167, 201, 87);
+    border-radius: 15px;
+    padding: 2rem;
+  }
+  
+  input {
+    margin-top: 0.5rem;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .boutons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+  }
+
+  #dashboard{
+    background-color: rgb(167, 201, 87);
+    padding: 1rem;
+    font-size: 1rem;
+  }

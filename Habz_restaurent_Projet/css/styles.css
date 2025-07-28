@@ -1,0 +1,866 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 10px 60px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #1de9b6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dot {
+  color: #1de9b6;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+}
+
+.actions .btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+
+}
+.actions .button.secondary{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* model registaration form  */
+/* Container for the whole form overlay */
+#contenitoreForm {
+  display: none; /* shown with .visible */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #d0f0f7, #a7e7da);
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Make form visible when class is added via JS */
+#contenitoreForm.visible {
+  display: flex;
+}
+
+/* Flexbox layout for two cards side-by-side */
+#formPrenotazione {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+/* Shared card styles */
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 320px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Header */
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Labels */
+.card label {
+  display: block;
+  margin: 0.5rem 0 0.3rem;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Inputs */
+.card input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.card button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #20c9b8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #18b1a4;
+}
+
+/* Close icon */
+.card .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #20c9b8;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.card .close:hover {
+  color: #ff4d4d;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+}
+
+.hero-text h1 {
+  font-family: 'Courier New', monospace;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.hero-image img {
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark .navbar {
+  background-color: #1f1f1f;
+}
+
+body.dark .nav-links li a {
+  color: #ddd;
+}
+
+body.dark .btn.primary {
+  background-color: #00bfa5;
+}
+
+body.dark .why-choose {
+  background-color: #1f1f1f;
+}
+
+body.dark .testimonial-slider {
+  background-color: #1f1f1f;
+}
+
+body.dark .team-section {
+  background-color: #1f1f1f;
+}
+
+body.dark .reservation-section {
+  background-color: #1f1f1f;
+}
+/* About section  */
+
+.about-section {
+  display: flex;
+  padding: 60px;
+  gap: 40px;
+}
+
+.about-left {
+  flex: 1;
+  position: relative;
+}
+
+.about-left img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.book-box {
+  position: absolute;
+  bottom: 20px;
+  left: 100px;
+  background: white;
+  padding: 30px;
+  border-radius: 0px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 420px;
+  text-align: center;
+}
+
+.book-box h3 {
+  margin: 0 0 5px;
+}
+
+.book-box a {
+  color: #00bfa5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right small {
+  color: gray;
+  font-size: 14px;
+}
+
+.about-right h2 {
+  font-family: 'Courier New', monospace;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.about-right .highlight {
+  color: #00bfa5;
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
+}
+
+.about-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.video-preview {
+  position: relative;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.video-preview img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1de9b6;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/* Why choose Section */
+.why-choose {
+  display: flex;
+  gap: 30px;
+  padding: 50px;
+  background: #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.why-left {
+  flex: 1;
+  min-width: 300px;
+  background: #20d3c2;
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.why-left h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.why-left p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.learn-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.learn-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.features-grid {
+  flex: 2;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background: #ffecec;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-circle img {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-card,
+.learn-btn {
+  transition: all 0.3s ease;
+}
+
+/* Sats Section */
+.stats-section {
+  background: url('../img/stats-bg.jpg') no-repeat center center/cover;
+  padding: 60px 20px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.stats-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.stat-item {
+  margin: 20px;
+  flex: 1 1 200px;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+/* menu section */
+.menu-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.menu-filter {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.menu-filter li {
+  cursor: pointer;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.menu-filter li.active,
+.menu-filter li:hover {
+  color: #14d6c4;
+  border-color: #14d6c4;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.menu-card {
+  width: 220px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.menu-card h3 {
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.menu-card p {
+  color: gray;
+  font-size: 0.9em;
+}
+
+.menu-card span {
+  color: #14d6c4;
+  font-weight: bold;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Testimonials Section */
+  .testimonial-slider {
+            padding: 80px 20px;
+            background: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            max-width: 4200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .profile-image {
+        width: 80px;        /* Adjust size as needed */
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 10px auto; /* centers the image and adds spacing */
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .author-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .author-username {
+            color: #888;
+            font-size: 16px;
+        }
+        .star-rating {
+        font-size: 24px;
+        color: gold;
+        text-align: center;
+        margin-bottom: 10px;
+        }
+        /* Navigation Arrows */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-nav:hover {
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slide {
+                padding: 30px 20px;
+            }
+            
+            .large-number {
+                font-size: 80px;
+            }
+        }
+            /* Gellery Section */
+          .gallery-section {
+              padding: 20px;
+              text-align: center;
+                }
+
+          .gallery-title {
+              margin-bottom: 15px;
+              font-size: 24px;
+              font-weight: bold;
+          }
+
+          .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+                gap: 10px;
+            } 
+
+            .gallery-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+              }
+
+              /* Team Section */
+    
+
+.team-section {
+  padding: 4rem 2rem;
+  background: #f3f4f6;
+  text-align: center;
+}
+
+.team-heading {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 0px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 300px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 100%;
+  display: block;
+  height: 300px;
+  object-fit: cover;
+}
+
+.wave {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border-top-left-radius: 100% 20px;
+  border-top-right-radius: 100% 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-card:hover .wave {
+  transform: translateY(0%);
+}
+
+.team-info {
+  padding: 1rem;
+}
+
+.team-info h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.team-info p {
+  margin: 0;
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.team-card:hover .social-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-icons a {
+  color: #555;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn blue */
+}
+@media (max-width: 768px) {
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Contact Section */
+.reservation-section {
+  background: #f5f5f5;
+  padding: 3rem 12rem;
+  text-align: center;
+}
+
+.reservation-heading {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+.reservation-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  /*box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);*/
+}
+
+.reservation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 100%;
+}
+
+.reservation-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 50%;
+}
+
+.reservation-form {
+  flex: 1;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  align-self: center;
+  background-color: #20c997;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1aa179;
+}
+
+@media (max-width: 768px) {
+  .reservation-container {
+    flex-direction: column;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .reservation-image {
+    max-height: 250px;
+  }
+}

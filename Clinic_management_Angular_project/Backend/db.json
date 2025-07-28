@@ -1,0 +1,39 @@
+{
+  "admin": [
+    {
+      "id": "1",
+      "nom": "Benjohx",
+      "email": "benjohx@admin.be",
+      "password": "josh"
+    }
+  ],
+  "medecins": [
+    {
+      "id": "a803",
+      "nom": "Clovis Ali",
+      "email": "clovis@patient.be",
+      "password": "Test123",
+      "telephone": "123456745",
+      "specialite": "Genechologe"
+    }
+  ],
+  "patiens": [
+    {
+      "id": "afaa",
+      "nom": "Muhamad Ali",
+      "email": "ali@patient.be",
+      "password": "Test123",
+      "telephone": "1234567897"
+    }
+  ],
+  "rendezvous": [
+    {
+      "id": "797b",
+      "date": "2025-07-28",
+      "heure": 12,
+      "patientId": "afaa",
+      "medecinId": "a803",
+      "etat": "confirmé"
+    }
+  ]
+}
